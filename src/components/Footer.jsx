@@ -50,7 +50,7 @@ const Footer = () => {
         </div>
       </div>
       {/* Bottom bar */}
-      <div className="mt-8 border-t border-gray-700 pt-4 pb-4 text-center text-xs bg-black">
+      <div className="mt-8 border-t border-gray-700 pt-4 pb-4 text-center text-xs bg-[#002F5F]">
         <p>&copy; 2021 All Rights Reserved. <a href="#" className="underline">Privacy Policy</a></p>
       </div>
     </footer>
