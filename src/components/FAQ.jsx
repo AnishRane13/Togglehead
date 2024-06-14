@@ -24,7 +24,7 @@ const FAQ = () => {
   };
 
   return (
-    <div className="max-w-4xl mx-auto p-4 text-xs leading-normal">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-20 text-xs leading-normal">
       <h2 className="text-2xl font-semibold text-center mb-10 text-[#12406F]">FAQ</h2>
       {faqData.map((faq, index) => (
         <div key={index} className={`mb-4 ${openIndex === index ? 'border-blue-500' : 'border-gray-300'}`}>
