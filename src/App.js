@@ -5,6 +5,7 @@ import Upcoming from './components/Upcoming';
 import Navbar from './components/Navbar';
 import SliderComponent from './components/SliderComponent1';
 import Statistics from './components/Statistics';
+import SubscribeForm from './components/SubscribeForm';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <SliderComponent/>
       <Statistics/>
       <FAQ/>
+      <SubscribeForm/>
       <Footer/>
     </div>
   );

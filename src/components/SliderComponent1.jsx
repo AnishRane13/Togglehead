@@ -13,10 +13,9 @@ const sliderData = [
 
 const SliderComponent = () => {
   const settings = {
-    dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 3.5,
+    slidesToShow: 3.5, // Show approximately 3.5 slides
     slidesToScroll: 1,
     responsive: [
       {

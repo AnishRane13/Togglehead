@@ -1,17 +1,11 @@
-/* ./src/SliderComponent.css */
-.slick-slide {
-  padding: 0 10px;
+.slider-container .slick-list {
+  overflow: visible;
 }
 
-.slick-list {
-  margin: 0 -10px;
+.slider-container .slick-slide:not(.slick-active) {
+  opacity: 0.5;
 }
 
-.slick-dots li button:before {
-  color: #1e3a8a; /* Tailwind's blue-800 */
-}
-
-.slick-dots li.slick-active button:before {
-  opacity: 1;
-  color: #1e3a8a; /* Tailwind's blue-800 */
+.slider-container .slick-slide:not(.slick-active) > div {
+  transform: scale(0.8);
 }
