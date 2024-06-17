@@ -1,6 +1,6 @@
 import React from 'react';
-import phoneBg from '../assets/Phone.svg'; // Ensure the SVG is in the 'src' directory
-import TriangleIcon from '../assets/Triangle.png'; // Adjust the path as needed
+import phoneBg from '../assets/Phone.svg'; 
+import TriangleIcon from '../assets/Triangle.png'; 
 
 const SubscribeForm = () => {
   return (

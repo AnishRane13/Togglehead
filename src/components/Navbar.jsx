@@ -24,7 +24,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-blue-800 px-4 py-5">
+    <nav className="bg-[#12406F] px-4 py-5">
       <div className="container mx-auto flex justify-between items-center">
         <div className="text-white font-bold text-xl">LOGO</div>
         {/* Desktop Menu */}
