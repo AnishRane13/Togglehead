@@ -5,20 +5,20 @@ import { IconContext } from "react-icons";
 const Footer = () => {
   return (
     <footer className="bg-[#092852] text-white pt-8">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-24">
+      <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-24">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Contact Us */}
           <div className="text-left">
-            <h3 className="text-lg font-semibold mb-4">Contact us</h3>
-            <p className="text-xs mb-2 text-gray-300">Address: amet, consetetur sadipscing elitr, sed diam</p>
-            <p className="text-xs mb-2 text-gray-300">Email: eirmod tempor invidunt ut labore et dolore</p>
-            <p className="text-xs mb-2 text-gray-300">Phone no: 123456789</p>
+            <h3 className="text-xl font-semibold mb-4">Contact us</h3>
+            <p className="text-sm mb-2 text-gray-300">Address: amet, consetetur sadipscing elitr, sed diam</p>
+            <p className="text-sm mb-2 text-gray-300">Email: eirmod tempor invidunt ut labore et dolore</p>
+            <p className="text-sm mb-2 text-gray-300">Phone no: 123456789</p>
           </div>
 
           {/* Follow Us */}
           <div className="flex flex-col items-start md:items-center">
-            <h3 className="text-lg font-semibold mb-4 text-left md:text-center">Follow us</h3>
-            <div className="flex space-x-4 text-2xl text-gray-300">
+            <h3 className="text-xl font-semibold mb-4 text-left md:text-center">Follow us</h3>
+            <div className="flex space-x-8 text-3xl text-gray-300">
               <a href="#" aria-label="Facebook" className="hover:text-gray-400">
                 <FaFacebookF />
               </a>
@@ -42,28 +42,28 @@ const Footer = () => {
 
           {/* Head Office */}
           <div className="text-left">
-            <h3 className="text-lg font-semibold mb-4">Head Office</h3>
-            <div className="flex items-start text-xs mb-4 text-gray-300">
-              <FaMapMarkerAlt className="mr-2 text-xl mt-" />
+            <h3 className="text-xl font-semibold mb-4">Head Office</h3>
+            <div className="flex items-start text-sm mb-4 text-gray-300">
+              <FaMapMarkerAlt className="mr-2 text-xl mb-1" />
               <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut.</p>
             </div>
-            <div className="flex items-center text-xs mb-4 text-gray-300">
-              <FaClock className="mr-2 text-xs" />
+            <div className="flex items-center text-sm mb-4 text-gray-300">
+              <FaClock className="mr-2 text-sm" />
               <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr.</p>
             </div>
-            <div className="flex items-center text-xs mb-4 text-gray-300">
+            <div className="flex items-center text-sm mb-4 text-gray-300">
               <FaClock className="mr-2" />
               <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr.</p>
             </div>
-            <div className="flex items-center text-xs mb-4 text-gray-300">
+            <div className="flex items-center text-sm mb-4 text-gray-300">
               <FaTrain className="mr-2" />
               <p>Lorem ipsum asd asdsaaweeq Lorem Ipsum</p>
             </div>
           </div>
-        </div>
+                  </div>
       </div>
       {/* Bottom bar */}
-      <div className="mt-8 border-t border-gray-700 pt-4 pb-4 text-center text-xs bg-[#002F5F]">
+      <div className="mt-8 border-t border-gray-700 pt-4 pb-4 text-center text-md bg-[#002F5F]">
         <p>&copy; 2021 All Rights Reserved. <a href="#" className="underline">Privacy Policy</a></p>
       </div>
     </footer>
