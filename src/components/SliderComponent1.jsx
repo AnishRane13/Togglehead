@@ -15,7 +15,7 @@ const SliderComponent = () => {
   const settings = {
     infinite: true,
     speed: 500,
-    slidesToShow: 3, // Show approximately 3.5 slides
+    slidesToShow: 3,
     slidesToScroll: 1,
     responsive: [
       {
@@ -38,7 +38,28 @@ const SliderComponent = () => {
         breakpoint: 480,
         settings: {
           slidesToShow: 1,
-          slidesToScroll: 1
+          slidesToScroll: 1,
+          centerMode: true,
+          centerPadding: '20px' // Adjust as needed
+        }
+      },
+      {
+        breakpoint: 1280, // New breakpoint for large desktop
+        settings: {
+          slidesToShow: 3.5, // Display 3.5 cards
+          slidesToScroll: 1,
+          centerMode: false,
+          centerPadding: '0px',
+          initialSlide: 1, // Show half of the first card at the beginning
+          variableWidth: true,
+          responsive: [
+            {
+              breakpoint: 1440, // Further adjust for very large screens if needed
+              settings: {
+                slidesToShow: 4,
+              }
+            }
+          ]
         }
       }
     ]
@@ -46,11 +67,11 @@ const SliderComponent = () => {
 
   return (
     <div className="bg-white py-12 overflow-hidden">
-      <div className="max-w-full mx-auto px-2 sm:px-4 lg:px-24">
+      <div className="max-w-full mx-auto px-4 lg:px-8 xl:px-24"> {/* Adjusted padding for larger screens */}
         <Slider {...settings} className="-mx-2">
           {sliderData.map((item, index) => (
-            <div key={index} className="p-4 pl-0 pr-6">
-              <div className="bg-[#12406F] text-white p-6 pr-8 rounded-2xl shadow-lg h-full flex flex-col justify-between relative overflow-hidden">
+            <div key={index} className="px-2 lg:px-4"> {/* Increase px-2 to px-4 for desktop */}
+              <div className="bg-[#12406F] text-white p-6 pr-8 py-10 rounded-2xl shadow-lg h-full flex flex-col justify-between relative overflow-hidden">
                 <div className="absolute inset-0 opacity-20">
                   <div className="bg-pattern h-full w-full"></div>
                 </div>

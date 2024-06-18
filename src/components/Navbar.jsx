@@ -1,9 +1,8 @@
-import React, { useState, Fragment } from 'react';
+import React, { useState } from 'react';
 import { Menu, Transition } from '@headlessui/react';
 import { ChevronDownIcon, MagnifyingGlassIcon, Bars3Icon, XMarkIcon } from '@heroicons/react/24/solid';
 
 const Navbar = () => {
-  // Define menuItems first
   const menuItems = [
     { name: 'Qualifications', options: ['Option 1', 'Option 2', 'Option 3'] },
     { name: 'Organizations', options: ['Option 1', 'Option 2', 'Option 3'] },
@@ -12,28 +11,25 @@ const Navbar = () => {
     { name: 'Lorem ipsum', options: ['Option 1', 'Option 2', 'Option 3'] },
   ];
 
-  const [isOpen, setIsOpen] = useState(false); // State for mobile menu
-  const [dropdownOpen, setDropdownOpen] = useState(Array(menuItems.length).fill(false)); // State for each dropdown
+  const [isOpen, setIsOpen] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(Array(menuItems.length).fill(false));
 
-  // Function to toggle mobile menu
   const toggleMobileMenu = () => {
     setIsOpen(!isOpen);
   };
 
-  // Function to toggle dropdown menu
   const toggleDropdown = (index) => {
-    const newDropdownState = [...dropdownOpen]; // Create a copy of dropdownOpen array
-    newDropdownState[index] = !newDropdownState[index]; // Toggle the clicked dropdown
-    
+    const newDropdownState = [...dropdownOpen];
+    newDropdownState[index] = !newDropdownState[index];
     setDropdownOpen(newDropdownState);
   };
 
   return (
-    <nav className="bg-[#12406F] pl-4 md:pl-24 pr-4 py-5 "> {/* Responsive padding */}
+    <nav className="bg-[#12406F] pl-4 md:pl-24 pr-4 py-5">
       <div className="container mx-auto flex justify-between items-center">
         <div className="text-white font-bold text-3xl font-sans">LOGO</div>
         {/* Desktop Menu */}
-        <div className="hidden md:flex space-x-8 items-center text-md font-sans"> {/* Reduced spacing */}
+        <div className="hidden md:flex space-x-8 items-center text-md font-sans">
           {menuItems.map((item, index) => (
             <Menu as="div" key={item.name} className="relative inline-block text-left font-semibold">
               <div>
@@ -43,15 +39,15 @@ const Navbar = () => {
                 </Menu.Button>
               </div>
               <Transition
-                as={Fragment}
-                enter="transition ease-out duration-200 transform"
+                as={React.Fragment}
+                enter="transition ease-out duration-200"
                 enterFrom="opacity-0 scale-95 -translate-y-1"
                 enterTo="opacity-100 scale-100 translate-y-0"
-                leave="transition ease-in duration-150 transform"
+                leave="transition ease-in duration-150"
                 leaveFrom="opacity-100 scale-100 translate-y-0"
                 leaveTo="opacity-0 scale-95 -translate-y-1"
               >
-                <Menu.Items className="origin-top-right absolute mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none z-50">
+                <Menu.Items className="origin-top-right absolute mt-2 w-48 rounded-lg shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none z-50">
                   <div className="py-1">
                     {item.options.map((option, optionIndex) => (
                       <Menu.Item key={optionIndex}>
@@ -72,9 +68,11 @@ const Navbar = () => {
               </Transition>
             </Menu>
           ))}
-          <div className="flex items-center space-x-3"> {/* Reduced spacing */}
+          <div className="flex items-center space-x-3">
             <MagnifyingGlassIcon className="w-6 h-6 text-white hover:text-gray-300 transition duration-300 mx-3" />
-            <button className="bg-white text-[#12406F] px-7 py-3 rounded-xl hover:bg-gray-100 transition duration-300 font-medium text-lg">Enrolment</button>
+            <button className="bg-white text-[#12406F] px-7 py-3 rounded-xl hover:bg-gray-100 transition duration-300 font-medium text-lg">
+              Enrolment
+            </button>
           </div>
         </div>
         {/* Mobile Menu */}
