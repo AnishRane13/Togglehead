@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import background from '../assets/Slide.svg'; // Adjust the path accordingly
+import TriangleIcon from '../assets/Triangle.png';
 
 const slides = [
   { id: 1, title: 'Lorem ipsum', content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam quis accumsan elit, non fermentum quam. Etiam eu nibh aliquet lorem viverra interdum. Integer sollicitudin urna massa, sit amet fermentum Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
@@ -14,7 +15,7 @@ const Slideshow = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prevSlide) => (prevSlide + 1) % slides.length);
-    }, 3000); // Change slide every 3 seconds
+    }, 5000); // Change slide every 3 seconds
 
     return () => clearInterval(interval);
   }, []);
@@ -28,7 +29,20 @@ const Slideshow = () => {
               <div className="max-w-lg px-4 text-center lg:text-left">
                 <h2 className="text-2xl lg:text-4xl font-bold text-[#12406F]">{slide.title}</h2>
                 <p className="text-gray-500 mt-4">{slide.content}</p>
-                <button className="mt-6 px-4 py-2 bg-[#12406F] text-white rounded-xl">Know More</button>
+                <div className="flex justify-center lg:justify-start">
+                  <button
+                    type="submit"
+                    className="flex items-center bg-[#12406F] text-white p-2 rounded-xl hover:bg-[#0E3557] transition-colors duration-300 text-xs font-semibold mt-6 px-6 py-3 pl-7 mb-2"
+                    style={{ minWidth: '120px' }}
+                  >
+                    Know More
+                    <img
+                      src={TriangleIcon}
+                      alt="Triangle"
+                      className="ml-2 h-2"
+                    />
+                  </button>
+                </div>
               </div>
               <div className="w-full lg:w-2/5 h-full flex items-center justify-center">
                 <img src={background} alt="background" className="w-full lg:w-auto h-48 lg:h-full object-cover" />

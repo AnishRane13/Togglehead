@@ -15,7 +15,7 @@ const SliderComponent = () => {
   const settings = {
     infinite: true,
     speed: 500,
-    slidesToShow: 3.5, // Show approximately 3.5 slides
+    slidesToShow: 3, // Show approximately 3.5 slides
     slidesToScroll: 1,
     responsive: [
       {
@@ -46,7 +46,7 @@ const SliderComponent = () => {
 
   return (
     <div className="bg-white py-12 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-6">
+      <div className="max-w-full mx-auto px-2 sm:px-4 lg:px-24">
         <Slider {...settings} className="-mx-2">
           {sliderData.map((item, index) => (
             <div key={index} className="p-2">
