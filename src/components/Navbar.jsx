@@ -47,24 +47,28 @@ const Navbar = () => {
                 leaveFrom="opacity-100 scale-100 translate-y-0"
                 leaveTo="opacity-0 scale-95 -translate-y-1"
               >
-                <Menu.Items className="origin-top-right absolute mt-2 w-48 rounded-lg shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none z-50">
-                  <div className="py-1">
-                    {item.options.map((option, optionIndex) => (
-                      <Menu.Item key={optionIndex}>
-                        {({ active }) => (
-                          <a
-                            href="/"
-                            className={`${
-                              active ? 'bg-gray-100 text-gray-900' : 'text-gray-700'
-                            } block px-4 py-2 text-sm transition duration-150`}
-                          >
-                            {option}
-                          </a>
-                        )}
-                      </Menu.Item>
-                    ))}
-                  </div>
-                </Menu.Items>
+            <Menu.Items className="origin-top-right absolute mt-2 w-56 rounded-lg shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none z-50">
+  <div className="py-1">
+    {item.options.map((option, optionIndex) => (
+      <Menu.Item key={optionIndex}>
+        {({ active }) => (
+          <a
+            href="/"
+            className={`block px-4 py-3 text-sm ${
+              active ? 'bg-gray-100 text-gray-900' : 'text-gray-700 hover:bg-gray-100'
+            } transition duration-150 rounded-md`}
+          >
+            {option}
+          </a>
+        )}
+      </Menu.Item>
+    ))}
+  </div>
+  <div className="py-1">
+   
+  </div>
+</Menu.Items>
+
               </Transition>
             </Menu>
           ))}
