@@ -3,9 +3,7 @@ import { Menu, Transition } from '@headlessui/react';
 import { ChevronDownIcon, MagnifyingGlassIcon, Bars3Icon, XMarkIcon } from '@heroicons/react/24/solid';
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false); // State for mobile menu
-  const [dropdownOpen, setDropdownOpen] = useState({}); // State for each dropdown
-
+  // Define menuItems first
   const menuItems = [
     { name: 'Qualifications', options: ['Option 1', 'Option 2', 'Option 3'] },
     { name: 'Organizations', options: ['Option 1', 'Option 2', 'Option 3'] },
@@ -14,6 +12,9 @@ const Navbar = () => {
     { name: 'Lorem ipsum', options: ['Option 1', 'Option 2', 'Option 3'] },
   ];
 
+  const [isOpen, setIsOpen] = useState(false); // State for mobile menu
+  const [dropdownOpen, setDropdownOpen] = useState(Array(menuItems.length).fill(false)); // State for each dropdown
+
   // Function to toggle mobile menu
   const toggleMobileMenu = () => {
     setIsOpen(!isOpen);
@@ -21,20 +22,20 @@ const Navbar = () => {
 
   // Function to toggle dropdown menu
   const toggleDropdown = (index) => {
-    setDropdownOpen((prev) => ({
-      ...prev,
-      [index]: !prev[index],
-    }));
+    const newDropdownState = [...dropdownOpen]; // Create a copy of dropdownOpen array
+    newDropdownState[index] = !newDropdownState[index]; // Toggle the clicked dropdown
+    
+    setDropdownOpen(newDropdownState);
   };
 
   return (
-    <nav className="bg-[#12406F] pl-4 md:pl-24 pr-4 py-5"> {/* Responsive padding */}
+    <nav className="bg-[#12406F] pl-4 md:pl-24 pr-4 py-5 "> {/* Responsive padding */}
       <div className="container mx-auto flex justify-between items-center">
         <div className="text-white font-bold text-3xl font-sans">LOGO</div>
         {/* Desktop Menu */}
         <div className="hidden md:flex space-x-8 items-center text-md font-sans"> {/* Reduced spacing */}
           {menuItems.map((item, index) => (
-            <Menu as="div" className="relative inline-block text-left font-semibold" key={item.name}>
+            <Menu as="div" key={item.name} className="relative inline-block text-left font-semibold">
               <div>
                 <Menu.Button className="inline-flex justify-center w-full text-white hover:text-gray-300 transition duration-300">
                   {item.name}
@@ -79,24 +80,24 @@ const Navbar = () => {
         {/* Mobile Menu */}
         <div className="md:hidden flex items-center">
           <button onClick={toggleMobileMenu} className="text-white focus:outline-none">
-            {isOpen ? <XMarkIcon className="w-6 h-6" /> : <Bars3Icon className="w-6 h-6" />}
+            {isOpen ? <XMarkIcon className="w-6 h-6 mr-4" /> : <Bars3Icon className="w-6 h-6 mr-4" />}
           </button>
         </div>
       </div>
       {/* Mobile Menu Items */}
       {isOpen && (
-        <div className="md:hidden px-4"> {/* Reduced padding to mobile menu */}
+        <div className="md:hidden px-4 rounded-md pt-4">
           {menuItems.map((item, index) => (
-            <div key={item.name}>
+            <div key={item.name} className="mb-2">
               <button
                 onClick={() => toggleDropdown(index)}
-                className="flex justify-between w-full text-white px-4 py-2 bg-blue-800 hover:bg-blue-700 transition duration-300"
+                className="flex justify-between items-center w-full text-white px-4 py-2 bg-[#12406F] rounded-lg shadow hover:bg-blue-700 transition duration-300"
               >
                 {item.name}
-                <ChevronDownIcon className="w-4 h-4 ml-2 -mr-1" aria-hidden="true" />
+                <ChevronDownIcon className="w-4 h-4 ml-2 -mr-1 text-white" aria-hidden="true" />
               </button>
               {dropdownOpen[index] && (
-                <div className="bg-white z-50">
+                <div className="bg-white z-50 mt-2 rounded-lg shadow-lg overflow-hidden">
                   {item.options.map((option, optionIndex) => (
                     <a
                       key={optionIndex}
@@ -110,9 +111,11 @@ const Navbar = () => {
               )}
             </div>
           ))}
-          <div className="flex items-center space-x-3 px-4 py-2"> {/* Reduced spacing */}
+          <div className="flex items-center space-x-3 px-4 py-2 mt-4">
             <MagnifyingGlassIcon className="w-5 h-5 text-white" />
-            <button className="bg-white text-blue-800 px-4 py-2 rounded w-40 hover:bg-gray-100 transition duration-300">Enrolment</button>
+            <button className="bg-white text-[#12406F] px-4 py-2 rounded-lg shadow hover:bg-gray-100 transition duration-300 w-full">
+              Enrolment
+            </button>
           </div>
         </div>
       )}
