@@ -49,18 +49,18 @@ const SliderComponent = () => {
       <div className="max-w-full mx-auto px-2 sm:px-4 lg:px-24">
         <Slider {...settings} className="-mx-2">
           {sliderData.map((item, index) => (
-            <div key={index} className="p-2">
-              <div className="bg-[#12406F] text-white p-6 rounded-xl shadow-lg h-full flex flex-col justify-between relative overflow-hidden">
+            <div key={index} className="p-4 pl-0 pr-6">
+              <div className="bg-[#12406F] text-white p-6 pr-8 rounded-2xl shadow-lg h-full flex flex-col justify-between relative overflow-hidden">
                 <div className="absolute inset-0 opacity-20">
                   <div className="bg-pattern h-full w-full"></div>
                 </div>
                 <div className="relative z-10">
-                  <h3 className="text-xs font-semibold mb-3">{item.title}</h3>
-                  <p className="mb-6 text-xs leading-relaxed">{item.description}</p>
+                  <h3 className="text-xl font-semibold mb-3 mt-2">{item.title}</h3>
+                  <p className="mb-6 text-lg leading-relaxed">{item.description}</p>
                 </div>
                 <div className="relative z-10 flex items-center mt-auto">
-                  <span className="mr-2 text-xs">Know More</span>
-                  <img src={KnowMoreIcon} alt="Know More" className="w-4 h-4" />
+                  <span className="mr-2 text-lg">Know More</span>
+                  <img src={KnowMoreIcon} alt="Know More" className="w-6 h-6" />
                 </div>
               </div>
             </div>

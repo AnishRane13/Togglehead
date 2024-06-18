@@ -30,9 +30,9 @@ const Navbar = () => {
   return (
     <nav className="bg-[#12406F] pl-4 md:pl-24 pr-4 py-5"> {/* Responsive padding */}
       <div className="container mx-auto flex justify-between items-center">
-        <div className="text-white font-bold text-3xl">LOGO</div>
+        <div className="text-white font-bold text-3xl font-sans">LOGO</div>
         {/* Desktop Menu */}
-        <div className="hidden md:flex space-x-4 items-center text-sm"> {/* Reduced spacing */}
+        <div className="hidden md:flex space-x-8 items-center text-md font-sans"> {/* Reduced spacing */}
           {menuItems.map((item, index) => (
             <Menu as="div" className="relative inline-block text-left font-semibold" key={item.name}>
               <div>
@@ -72,8 +72,8 @@ const Navbar = () => {
             </Menu>
           ))}
           <div className="flex items-center space-x-3"> {/* Reduced spacing */}
-            <MagnifyingGlassIcon className="w-4 h-4 text-white hover:text-gray-300 transition duration-300" />
-            <button className="bg-white text-[#12406F] px-4 py-3 rounded-xl hover:bg-gray-100 transition duration-300 font-semibold">Enrolment</button>
+            <MagnifyingGlassIcon className="w-6 h-6 text-white hover:text-gray-300 transition duration-300 mx-3" />
+            <button className="bg-white text-[#12406F] px-7 py-3 rounded-xl hover:bg-gray-100 transition duration-300 font-medium text-lg">Enrolment</button>
           </div>
         </div>
         {/* Mobile Menu */}
